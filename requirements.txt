@@ -2,3 +2,4 @@ nicegui==1.4.17
 fastapi==0.109.2
 Gunicorn==20.1.0
 nylas==6.0.1
+pendulum==3.0.0
