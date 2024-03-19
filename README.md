@@ -2,45 +2,43 @@
 
 This is a project powered by [Nylas](https://www.nylas.com/), [FastAPI](https://fastapi.tiangolo.com/) and [NiceGUI](https://nicegui.io/).
 
-## Setup
+<img width="1481" alt="next_meeting_001" src="https://github.com/nylas-samples/next_meeting/assets/1071110/12d77165-cd28-49ea-a67a-3644dd9ac916">
 
-### System dependencies
+<img width="1480" alt="next_meeting_002" src="https://github.com/nylas-samples/next_meeting/assets/1071110/c2a57c6f-5316-4529-a2fb-a6cfda116a46">
 
-- Add System dependencies
+<img width="1480" alt="next_meeting_003" src="https://github.com/nylas-samples/next_meeting/assets/1071110/0e5f5559-0aa3-4e4e-9f7c-14b15ea991e7">
 
-### Gather environment variables
+<img width="1479" alt="next_meeting_004" src="https://github.com/nylas-samples/next_meeting/assets/1071110/a6fcfa49-8267-4cab-8c62-6ff4d0f5c496">
 
-You'll need the following values from the Nylas Dashboard:
+To test it locally, you need to download the repo and change some things:
 
-```text
-ACCESS_TOKEN = ""
-CLIENT_ID = ""
-CLIENT_SECRET = ""
+* First add dotenv to your libraries
+
+```
+from dotenv import load_dotenv
 ```
 
-Add the above values to a `.env` file.
+* Then change the following:
 
-The `.env` file is added to `.gitignore`. Ensure to store these values securely.
-
-### Install dependencies
-
-[replace with install steps]
-```bash
-$ npm i
+```
+os.environ["V3_API_KEY"] to os.environ.get("V3_API_KEY")
 ```
 
-## Usage
+* And finally change the following:
 
-The recommended way to use this sample is ...
+```
+https://next-meeting.onrender.com/login/nylas/authorized with http://localhost:8000/login/nylas/authorized
+```
 
-You can also clone the repository ...
+Don't forget to add your call the call URI:
 
-You'll find more detailed instructions ...
+```
+Head to the Hosted Authentication page on your dashboard, and click on Add a callback URI.
 
-## Get support
+http://localhost:5000/login/nylas/authorized
+```
 
-If you found a bug or want to suggest a new [feature/use case/sample], please file an issue.
+For more details check the blog post [How to create a scheduler with Python and Taipy](https://www.nylas.com/blog/how-to-create-a-scheduler-with-python-and-taipy/)
 
-## Learn more
+**To make your own view follow this steps**
 
-Visit our [Nylas documentation](https://developer.nylas.com/) to learn more.
