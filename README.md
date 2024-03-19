@@ -10,7 +10,7 @@ This is a project powered by [Nylas](https://www.nylas.com/), [FastAPI](https://
 
 <img width="1479" alt="next_meeting_004" src="https://github.com/nylas-samples/next_meeting/assets/1071110/a6fcfa49-8267-4cab-8c62-6ff4d0f5c496">
 
-To test it locally, you need to download the repo and change some things:
+# To test it locally, you need to download the repo and change some things:
 
 * First add dotenv to your libraries
 
@@ -40,5 +40,35 @@ http://localhost:5000/login/nylas/authorized
 
 For more details check the blog post [How to create a scheduler with Python and Taipy](https://www.nylas.com/blog/how-to-create-a-scheduler-with-python-and-taipy/)
 
-**To make your own view follow this steps**
 
+# To make your own view follow this steps
+
+```
+create a new file, for example custom.py and add the following:
+
+def custom_view(hours, minutes, title) -> None:
+```
+
+On **index.py** add the call to the view
+
+```
+import views.custom
+```
+
+On **event_display** add the following:
+
+```
+match option_info['option']:
+    case 'custom':
+        views.custom.custom_view(time_tuple[0], time_tuple[1], event[0].title)
+```
+
+On **def nextmeeting(request: Request):** add the following:
+
+```
+ui.radio(["classic", "led", "word_clock", "custom"], value="classic", on_change = lambda e: choose_option(e.value))
+```
+
+# Adding your custom view to the project
+
+Simply, submit a PR 😊
