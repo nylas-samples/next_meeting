@@ -1,5 +1,6 @@
-# code-sample-description
-This sample repo will show you how to easily do X with Nylas.
+# next_meeting
+
+This is a project powered by [Nylas](https://www.nylas.com/), [FastAPI](https://fastapi.tiangolo.com/) and [NiceGUI](https://nicegui.io/).
 
 ## Setup
 
