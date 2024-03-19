@@ -156,7 +156,7 @@ def nextmeeting(request: Request):
         # Define a container
         with output:
 			# Use a timer to repeat the same action
-            ui.timer(10, lambda: event_display(grant, query_params, output))
+            ui.timer(60, lambda: event_display(grant, query_params, output))
     with ui.column().classes('w-full items-center'):
 		# Radiobutton to select the view
         ui.radio(["classic", "led", "word_clock"], value="classic", on_change = lambda e: choose_option(e.value))
@@ -174,4 +174,5 @@ def logout(request: Request):
     return response
 
 # Run the application
+ui.page_title('Next Meeting')
 ui.run_with(fastapi_app)
