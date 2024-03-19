@@ -110,7 +110,7 @@ def login(request: Request):
     if(grant is None):
 		# Send the user to the auth screen
         config = URLForAuthenticationConfig({"client_id": os.environ["V3_CLIENT"], 
-                                                                      "redirect_uri" : "http://localhost:8000/login/nylas/authorized",
+                                                                      "redirect_uri" : "https://next-meeting.onrender.com/login/nylas/authorized",
                                                                       "scope":["https://www.googleapis.com/auth/calendar.events.readonly"]})
         url = nylas.auth.url_for_oauth2(config)
         response = RedirectResponse(url=url)
@@ -125,7 +125,7 @@ def login(request: Request):
 def authorized(request: Request):
     code = request.query_params['code']
     # We need to exchange the code for the grant
-    exchangeRequest = CodeExchangeRequest({"redirect_uri": "http://localhost:8000/login/nylas/authorized",
+    exchangeRequest = CodeExchangeRequest({"redirect_uri": "https://next-meeting.onrender.com/login/nylas/authorized",
                                                                               "code": code,
                                                                               "client_id": os.environ["V3_CLIENT"]})
     exchange = nylas.auth.exchange_code_for_token(exchangeRequest)
