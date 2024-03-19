@@ -174,5 +174,4 @@ def logout(request: Request):
     return response
 
 # Run the application
-ui.page_title('Next Meeting')
-ui.run_with(fastapi_app)
+ui.run_with(fastapi_app, title='Next Meeting')
