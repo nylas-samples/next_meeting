@@ -2,6 +2,8 @@
 
 This is a project powered by [Nylas](https://www.nylas.com/), [FastAPI](https://fastapi.tiangolo.com/) and [NiceGUI](https://nicegui.io/).
 
+## **You can try it out [here](https://next-meeting.onrender.com/)**
+
 In this project, we use hosted authentication to generate a grant for the user logging in. This grant will be valid until the user logs off or after a 5 days has passed. No information from the user gets stored more that the email and the grant. The only access requested and used is the calendar's events. 
 
 3 views are provided by default, with the option of creating new views.
